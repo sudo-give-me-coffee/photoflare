@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install deps
+      run: sudo apt-get install libgraphicsmagick++1-dev libc6-dev libqt5core5a libqt5gui5 libqt5widgets5 libomp-9-dev qtcreator
+    - name: Configure
+      run: qmake Photoflare.pro
+    - name: Compile
+      run: make
+    - name: Install
+      run: sudo make install
