@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install deps
-      run: sudo apt-get install libgraphicsmagick++1-dev libc6-dev libqt5core5a libqt5gui5 libqt5widgets5 libomp-9-dev qtcreator
+      run: sudo apt-get install libgraphicsmagick++1-dev libc6-dev libqt5core5a libqt5gui5 libqt5widgets5 libomp-9-dev qtcreator qt5-default
     - name: Configure
       run: qmake Photoflare.pro
     - name: Compile
